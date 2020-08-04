@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 });
 
 app.get("/projects", (req, res) => {
-    res.send("this is where you'll get all the projects.")
+    res.json([{id: "1", name: "placeholder"}, {id: "2", name: "placeholder2"}])
 })
 
 app.post('/projects', (req, res) => {
