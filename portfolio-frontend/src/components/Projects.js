@@ -16,9 +16,13 @@ class Projects extends Component {
     render() {
         return(
             <div className="Projects">
-                <h1>My Projects</h1>
                 {this.state.projects.map(project =>
-                    <div key={project.id}>{project.name}</div>)}
+                    <div className="singleProject" key={project._id}>
+                        <h4>{project.name}</h4>
+                        <p>{project.description}</p>
+                        {project.siteLink && <a className="project-link" href={project.siteLink} target="_blank">Website</a>}
+                        <a className="project-link" href={project.gitHubLink} target="_blank">GitHub</a>
+                    </div>)}
             </div>
         );
     }

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const dbUrl = "mongodb+srv://opalFruits:ooLFKoH5ZP6jz8@cluster0.mmpxe.mongodb.net/portfolio?retryWrites=true&w=majority"
+const dbUrl = process.env.DB_URL
 const dbName = "portfolio"
 
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true}).catch(e => {
