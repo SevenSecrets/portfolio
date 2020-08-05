@@ -10,7 +10,7 @@ a {
 .Projects {
   display: flex;
   flex-direction: column;
-  max-width: 35%;
+  max-width: 40%;
   margin: auto;
 }
 
@@ -41,6 +41,16 @@ a {
 
 .about {
   display: inline-block;
-  max-width: 40%;
+  max-width: 45%;
   margin: auto;
+}
+
+@media screen and (max-width: 500px) {
+  .about {
+    max-width: 90%;
+  }
+
+  .Projects {
+    max-width: 80%;
+  }
 }
