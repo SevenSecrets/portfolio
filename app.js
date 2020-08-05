@@ -1,13 +1,19 @@
 const express = require('express');
 const app = express();
 const port = 3001;
+const db = require('./db');
+const Project = require('./models/project-model');
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.get('/', (req, res) => {
     res.send("Hello!")
 });
 
 app.get("/projects", (req, res) => {
-    res.json([{id: "1", name: "placeholder"}, {id: "2", name: "placeholder2"}])
+    var projects = Project.find({}, (err, response) => {
+        res.json(response)
+    })
 })
 
 app.post('/projects', (req, res) => {
