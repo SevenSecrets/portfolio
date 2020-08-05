@@ -16,6 +16,7 @@ class Projects extends Component {
     render() {
         return(
             <div className="Projects">
+                <h3>My Projects</h3>
                 {this.state.projects.map(project =>
                     <div className="singleProject" key={project._id}>
                         <h4>{project.name}</h4>
